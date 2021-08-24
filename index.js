@@ -9,6 +9,7 @@ const estoRouter = require('./src/routes/estoque');
 const vendRouter = require('./src/routes/vendas');
 const logsRouter = require('./src/routes/logs');
 const pdfsRouter = require('./src/routes/pdf');
+const linkRouter = require('./src/routes/link');
 
 app.use(cors());
 app.options('*', cors());
@@ -21,9 +22,10 @@ app.use('/estoque', estoRouter);
 app.use('/vendas', vendRouter);
 app.use('/logs', logsRouter);
 app.use('/pdf', pdfsRouter);
+app.use('/link', linkRouter);
 
 
-app.listen(process.env.PORT || 3000, function () {
+app.listen(process.env.PORT || 3001, function () {
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
